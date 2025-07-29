@@ -51,7 +51,7 @@ def create_publication_bargraph():
     fig, ax = plt.subplots(figsize=(12, 8))
     
     
-    bar_color = '#4A90E2'  # Professional blue shade
+    bar_color = '#4A90E2'  
     
     
     bars = ax.bar(years, counts, color=bar_color, alpha=0.7, edgecolor='white', linewidth=1.5)
@@ -65,12 +65,12 @@ def create_publication_bargraph():
     ax.set_xticks(years)
     ax.set_xticklabels(years, rotation=45, ha='right')
     
-    # Add 2018 to x-axis for better spacing
-    all_years = list(range(2017, 2026))  # Include all years from 2017 to 2025
+    
+    all_years = list(range(2017, 2026))  
     ax.set_xticks(all_years)
     ax.set_xticklabels(all_years, rotation=45, ha='right')
     
-    # Add some space between x-axis labels and x-axis title
+    
     ax.xaxis.labelpad = 15
     
     
@@ -86,7 +86,7 @@ def create_publication_bargraph():
     
     plt.tight_layout(pad=2.0)
     
-    # Save the plot as SVG with reduced padding
+    
     plt.savefig('annual_publication_trends.svg', format='svg', 
                 bbox_inches='tight', pad_inches=0.3, dpi=300, facecolor='white')
     print("Bar graph saved as 'annual_publication_trends.svg'")
