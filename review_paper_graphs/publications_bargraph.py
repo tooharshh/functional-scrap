@@ -46,34 +46,19 @@ def create_publication_bargraph():
     
     
     years, counts = count_publications_per_year(publications_data)
-    
-    
     fig, ax = plt.subplots(figsize=(12, 8))
-    
-    
     bar_color = '#4A90E2'  
-    
-    
     bars = ax.bar(years, counts, color=bar_color, alpha=0.7, edgecolor='white', linewidth=1.5)
-    
-    
     ax.set_xlabel('Publication Year', fontsize=14, fontweight='bold')
     ax.set_ylabel('No. of Authors', fontsize=14, fontweight='bold')
     ax.set_title('Annual Publication Trends', fontsize=24, fontweight='bold', pad=20)
-    
-    
     ax.set_xticks(years)
     ax.set_xticklabels(years, rotation=45, ha='right')
-    
-    
     all_years = list(range(2017, 2026))  
     ax.set_xticks(all_years)
     ax.set_xticklabels(all_years, rotation=45, ha='right')
-    
-    
     ax.xaxis.labelpad = 15
-    
-    
+    ax.yaxis.labelpad = 15
     ax.grid(True, alpha=0.3, linestyle='--')
     ax.set_axisbelow(True)
     
@@ -85,8 +70,6 @@ def create_publication_bargraph():
     
     
     plt.tight_layout(pad=2.0)
-    
-    
     plt.savefig('annual_publication_trends.svg', format='svg', 
                 bbox_inches='tight', pad_inches=0.3, dpi=300, facecolor='white')
     print("Bar graph saved as 'annual_publication_trends.svg'")
